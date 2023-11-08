@@ -1,0 +1,50 @@
+server:
+  port: 8083
+spring:
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: true
+#    properties:
+#      hibernate:
+#        format_sql: true
+#  datasource:
+#    #link localhost
+#    url: jdbc:postgresql://localhost:5432/hotel_service
+#    username: postgres
+#    password: postgres
+#    platform: org.hibernate.dialect.PostgreSQLDialect
+
+ms-application:
+  jwt:
+    secret-key: bezKoderSecretKey
+    expiration-time: 86400000
+
+  redis:
+    host: localhost
+    port2-read: 6379
+    port2-write: 6379
+    enable: true
+    maxTotal: 100
+    timeout: 600000
+    messageExpireTime: 60
+  kafka:
+    enable: true
+    bootsTrapServer: localhost:9092,localhost:9101
+    clientId: MsDemo-test-1
+    #    username: phaivv
+    #    pwd: phaivv
+    pollSize: 300
+    topic:
+      sync-data-product: sync-data-product
+      sync-data-hotel: sync-data-hotel
+  elasticSearch:
+    enable: true
+    host: localhost:9200
+    timeout: 30000
+
+
+#logging:
+#  level:
+#    com:
+#      namnd: ERROR
